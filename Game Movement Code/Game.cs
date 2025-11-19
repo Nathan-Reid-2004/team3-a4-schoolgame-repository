@@ -51,38 +51,38 @@ namespace MohawkGame2D
         }
         public void Movement()
         {
-            if (Input.IsKeyboardKeyDown(KeyboardInput.W))
+            if (Input.IsKeyboardKeyDown(KeyboardInput.W) || Input.IsKeyboardKeyDown(KeyboardInput.Up) || Input.IsKeyboardKeyDown(KeyboardInput.I))
             {
                 playerPosY -= 6;
             }
-            if (Input.IsKeyboardKeyDown(KeyboardInput.S))
+            if (Input.IsKeyboardKeyDown(KeyboardInput.S) || Input.IsKeyboardKeyDown(KeyboardInput.Down) || Input.IsKeyboardKeyDown(KeyboardInput.K))
             {
                 playerPosY += 6;
             }
-            if (Input.IsKeyboardKeyDown(KeyboardInput.A))
+            if (Input.IsKeyboardKeyDown(KeyboardInput.A) || Input.IsKeyboardKeyDown(KeyboardInput.Left) || Input.IsKeyboardKeyDown(KeyboardInput.J))
             {
                 playerPosX -= 6;
             }
-            if (Input.IsKeyboardKeyDown(KeyboardInput.D))
+            if (Input.IsKeyboardKeyDown(KeyboardInput.D) || Input.IsKeyboardKeyDown(KeyboardInput.Right) || Input.IsKeyboardKeyDown(KeyboardInput.L))
             {
                 playerPosX += 6;
             }
         }
         public void PlayerColour()
         {
-            if (Input.IsKeyboardKeyDown(KeyboardInput.W))
+            if (Input.IsKeyboardKeyDown(KeyboardInput.W) || Input.IsKeyboardKeyDown(KeyboardInput.Up) || Input.IsKeyboardKeyDown(KeyboardInput.I))
             {
                 isMoving = true;
             }
-            else if (Input.IsKeyboardKeyDown(KeyboardInput.S))
+            else if (Input.IsKeyboardKeyDown(KeyboardInput.S) || Input.IsKeyboardKeyDown(KeyboardInput.Down) || Input.IsKeyboardKeyDown(KeyboardInput.K))
             {
                 isMoving = true;
             }
-            else if (Input.IsKeyboardKeyDown(KeyboardInput.A))
+            else if (Input.IsKeyboardKeyDown(KeyboardInput.A) || Input.IsKeyboardKeyDown(KeyboardInput.Left) || Input.IsKeyboardKeyDown(KeyboardInput.J))
             {
                 isMoving = true;
             }
-            else if (Input.IsKeyboardKeyDown(KeyboardInput.D))
+            else if (Input.IsKeyboardKeyDown(KeyboardInput.D) || Input.IsKeyboardKeyDown(KeyboardInput.Right) || Input.IsKeyboardKeyDown(KeyboardInput.L))
             {
                 isMoving = true;
             }
