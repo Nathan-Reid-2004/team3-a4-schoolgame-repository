@@ -1,5 +1,7 @@
 ﻿// Include the namespaces (code libraries) you need below.
 using System;
+using System.ComponentModel;
+using System.Data;
 using System.Numerics;
 
 // The namespace your code is in.
@@ -12,13 +14,24 @@ namespace MohawkGame2D
     {
         // Place your variables here:
 
+        Desks drawDesks;
+
+        Walls drawWalls;
+
+
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
         public void Setup()
         {
-            //testing test test
+            Window.SetSize(1280, 800);
+            Window.SetTitle("Collision Test");
+            Window.TargetFPS = 60;
+
+            drawDesks = new Desks();
+
+            drawWalls = new Walls();
         }
 
         /// <summary>
@@ -26,8 +39,12 @@ namespace MohawkGame2D
         /// </summary>
         public void Update()
         {
-
+            Window.ClearBackground(Color.White);
+            drawDesks.Update();
+            drawWalls.Update();
+            
         }
-    }
+
+}
 
 }
