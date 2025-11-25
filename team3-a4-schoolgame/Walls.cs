@@ -48,6 +48,12 @@ namespace MohawkGame2D
             {
                 Draw.FillColor = Color.DarkGray;
                 Draw.Rectangle(wallPositionX, wallPositionY, wallWidth, wallHeight);
+
+                //defining wall edges
+                float leftEdgeWall = wallPositionX;
+                float rightEdgeWall = wallPositionX + wallWidth;
+                float topEdgeWall = wallPositionY;
+                float bottomEdgeWall = wallPositionY + wallHeight;
             }
 
             //drawing the windows
@@ -59,6 +65,12 @@ namespace MohawkGame2D
             {
                 Draw.FillColor = Color.DarkGray;
                 Draw.Rectangle(windowPositionX, windowPositionY, windowWidth, windowHeight);
+
+                //defining window edges
+                float leftEdgeWindow = windowPositionX;
+                float rightEdgeWindow = windowPositionX + windowWidth;
+                float topEdgeWindow = windowPositionY;
+                float bottomEdgeWindow = windowPositionY + windowHeight;
             }
 
         }
@@ -73,7 +85,13 @@ namespace MohawkGame2D
             doorHeight = 100;
 
             Draw.FillColor = Color.Gray;
-            Draw.Rectangle(doorPositionX, doorPositionY, doorWidth, doorHeight);    
+            Draw.Rectangle(doorPositionX, doorPositionY, doorWidth, doorHeight);
+
+            //defining door edges
+            float leftEdgeDoor = doorPositionX;
+            float rightEdgeDoor = doorPositionX + doorWidth;
+            float topEdgeDoor = doorPositionY;
+            float bottomEdgeDoor = doorPositionY + doorHeight;
 
         }
 

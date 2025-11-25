@@ -59,6 +59,12 @@ namespace MohawkGame2D
             {
                 Draw.FillColor = Color.Red;
                 Draw.Rectangle(deskLeftPositionX, deskLeftPositionY, deskLeftWidth, deskLeftHeight);
+
+                //defining left-side student desks edges
+                float leftEdgeDeskLeft = deskLeftPositionX;
+                float rightEdgeDeskLeft = deskLeftPositionX + deskLeftWidth;
+                float topEdgeDeskLeft = deskLeftPositionY;
+                float bottomEdgeDeskLeft = deskLeftPositionY + deskLeftHeight;
             }
 
             //drawing all student desks on the right side of the room
@@ -70,6 +76,12 @@ namespace MohawkGame2D
             {
                 Draw.FillColor = Color.Red;
                 Draw.Rectangle(deskRightPositionX, deskRightPositionY, deskRightWidth, deskRightHeight);
+
+                //defining right-side student desks edges
+                float leftEdgeDeskRight = deskRightPositionX;
+                float rightEdgeDeskRight = deskRightPositionX + deskRightWidth;
+                float topEdgeDeskRight = deskRightPositionY;
+                float bottomEdgeDeskRight = deskRightPositionY + deskRightHeight;
             }
 
         }
@@ -85,6 +97,12 @@ namespace MohawkGame2D
             Draw.FillColor = Color.Red;
             Draw.Rectangle(profDeskPositionX, profDeskPositionY, profDeskWidth, profDeskHeight);
 
+            //defining prof desk edges
+            float leftEdgeProfDesk = profDeskPositionX;
+            float rightEdgeProfDesk = profDeskPositionX + profDeskWidth;
+            float topEdgeProfDesk = profDeskPositionY;
+            float bottomEdgeProfDesk = profDeskPositionY + profDeskHeight;
+
             //drawing projectors
             projectorPositionY = 550;
             projectorWidth = 200;
@@ -94,6 +112,13 @@ namespace MohawkGame2D
             {
                 Draw.FillColor = Color.Red;
                 Draw.Rectangle(projectorPositionX, projectorPositionY, projectorWidth, projectorHeight);
+
+                //defining projector edges
+                float leftEdgeProjector = projectorPositionX;
+                float rightEdgeProjector = projectorPositionX + projectorWidth;
+                float topEdgeProjector = projectorPositionY;
+                float bottomEdgeProjector = projectorPositionY + projectorHeight;
+
             }
 
             //drawing the shelf at the back of the room
@@ -103,7 +128,13 @@ namespace MohawkGame2D
             shelfHeight = 75;
 
             Draw.FillColor = Color.Red;
-            Draw.Rectangle(shelfPositionX, shelfPositionY, shelfWidth, shelfHeight);    
+            Draw.Rectangle(shelfPositionX, shelfPositionY, shelfWidth, shelfHeight);
+
+            //defining shelf edges
+            float leftEdgeShelf = shelfPositionX;
+            float rightEdgeShelf = shelfPositionX + shelfWidth;
+            float topEdgeShelf = shelfPositionY;
+            float bottomEdgeShelf = shelfPositionY + shelfHeight;
         }
 
     }
