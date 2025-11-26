@@ -53,7 +53,7 @@ namespace MohawkGame2D
             //drawing all student desks on the left side of the room
             deskLeftPositionX = 150;
             deskLeftWidth = 300;
-            deskLeftHeight = 75;
+            deskLeftHeight = 60;
 
             for (deskLeftPositionY = 200; deskLeftPositionY < 500; deskLeftPositionY += 120)
             {
@@ -70,7 +70,7 @@ namespace MohawkGame2D
             //drawing all student desks on the right side of the room
             deskRightPositionX = 830;
             deskRightWidth = 300;
-            deskRightHeight = 75;
+            deskRightHeight = 60;
 
             for (deskRightPositionY = 200; deskRightPositionY < 500; deskRightPositionY += 120)
             {

@@ -18,6 +18,8 @@ namespace MohawkGame2D
 
         Walls drawWalls;
 
+        Interactables drawInteractables;
+
 
 
         /// <summary>
@@ -32,6 +34,8 @@ namespace MohawkGame2D
             drawDesks = new Desks();
 
             drawWalls = new Walls();
+
+            drawInteractables = new Interactables();
         }
 
         /// <summary>
@@ -42,6 +46,7 @@ namespace MohawkGame2D
             Window.ClearBackground(Color.White);
             drawDesks.Update();
             drawWalls.Update();
+            drawInteractables.Update();
             
         }
 

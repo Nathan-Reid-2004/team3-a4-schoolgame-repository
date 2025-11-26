@@ -25,7 +25,6 @@ namespace MohawkGame2D
         public float doorHeight;
 
         //setup and update functions
-
         public void Setup()
         {
 
