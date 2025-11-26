@@ -3,6 +3,7 @@ using System;
 using System.Numerics;
 using System.Security.Principal;
 
+
 // The namespace your code is in.
 namespace MohawkGame2D
 {
@@ -12,11 +13,16 @@ namespace MohawkGame2D
     public class Game
     {
         // Place your variables here:
-        
+
         Mouse mouse;
         Cleaner cleaner;
         Apple apple;
         Paper paper;
+
+
+
+
+
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
@@ -26,13 +32,16 @@ namespace MohawkGame2D
             Window.SetSize(800, 600);
             Window.ClearBackground(Color.OffWhite);
 
-            
+
 
             mouse = new Mouse();
             cleaner = new Cleaner();
             apple = new Apple();
             paper = new Paper();
-            
+
+
+
+
         }
 
         /// <summary>
@@ -40,14 +49,20 @@ namespace MohawkGame2D
         /// </summary>
         public void Update()
 
+
         {
-           cleaner.Update();
+            cleaner.Update();
             apple.Update();
             paper.Update();
 
-            
 
+
+            {
+
+            }
         }
+
     }
+
 
 }

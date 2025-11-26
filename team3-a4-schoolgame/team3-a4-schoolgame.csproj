@@ -24,7 +24,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MohawkGame2D\Textures\" />
+    <Folder Include="MohawkGame2D/Textures" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Apple.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Cleaner.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Game.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Mouse.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Paper.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
