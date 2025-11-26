@@ -16,10 +16,7 @@ namespace MohawkGame2D
         Texture2D inputPrompt;
         float rotation = 0.0f;
 
-        public float leftEdge = 0.0f;
-        public float rightEdge = 0.0f;
-        public float topEdge = 0.0f;
-        public float bottomEdge = 0.0f;
+        
 
         // if cleaner is taken
         public bool taken = false;
