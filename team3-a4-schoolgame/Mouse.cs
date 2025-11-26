@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,53 +17,70 @@ namespace MohawkGame2D
         Texture2D inputPrompt;
         float rotation = 0.0f;
 
-        public float leftEdge = 0.0f;
-        public float rightEdge = 0.0f;
-        public float topEdge = 0.0f;
-        public float bottomEdge = 0.0f;
+        // if mouse is taken
 
         public bool taken = false;
- 
-    
-    public void Setup()
+
+        // player position
+        public Vector2 characterPosition;
+
+        // distance between apple and player
+        public float interactionDistance = 50.0f;
+
+
+        public void Setup()
         {
-            blackMouse = Graphics.LoadTexture("Textures/mouse.png");
+            blackMouse = Graphics.LoadTexture("MohawkGame2D/Textures/mouse.png");
+            inputPrompt = Graphics.LoadTexture("MohawkGame2D/Textures/input_e.png");
+
+            // Mouse position and size
             size = new Vector2(blackMouse.Width, blackMouse.Height);
+            position = new Vector2(300, 100);
 
-            inputPrompt = Graphics.LoadTexture("Textures/input_e.png");
         }
-        public void Update(Mouse mouse)
+
+
+
+        public void Update()
         {
-            leftEdge = position.X;
-            rightEdge = position.X + size.X;
-            topEdge = position.Y;
-            bottomEdge = position.Y + size.Y;
+            // calculate the distance between player and mouse
 
-            bool hover = false;
+            float distance = Vector2.Distance(characterPosition, position);
 
-            if (rightEdge > mouse.leftEdge && leftEdge < mouse.rightEdge
-                && bottomEdge > mouse.topEdge && topEdge < mouse.bottomEdge)
+            bool hover = distance < interactionDistance;
+
+
+            hover = true;
+
+            // when pressing E to take the mouse
+
+            if (Input.IsKeyboardKeyPressed(KeyboardInput.E))
             {
-                hover = true;
-                if (Input.IsKeyboardKeyPressed(KeyboardInput.E))
-                {
-                    taken = true;
-                }
+                taken = true;
             }
+
             if (!taken)
 
-            // show the input prompt 
+            // show input prompt when pressing E
+            {
 
-            { if (hover)
+                if (hover)
+                {
                     Graphics.Rotation = 0.0f;
-                Graphics.Scale = 0.50f;
-                Graphics.Draw(inputPrompt, position + new Vector2(+10, -30));
+                    Graphics.Scale = 0.40f;
+                    Graphics.Draw(inputPrompt, position + new Vector2(+10, -30));
+                }
+
+
+                
+                    rotation += 30.0f * Time.DeltaTime;
+                    Graphics.Scale = 0.10f;
+                    Graphics.DrawSubset(blackMouse, position + size / 2.0f, new Vector2(0, 0), size, size / 2.0f);
+                
             }
 
-            rotation += 30.0f * Time.DeltaTime;
-            Graphics.Rotation = rotation;
-            Graphics.Scale = 1.0f;
-            Graphics.DrawSubset(blackMouse, position + size / 2.0f, new Vector2(0, 0), size, size / 2.0f);
+
         }
     }
 }
+
