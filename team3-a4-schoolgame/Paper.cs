@@ -33,7 +33,7 @@ namespace MohawkGame2D
 
             // Paper position and size
             size = new Vector2(crumbledPaper.Width, crumbledPaper.Height);
-            position = new Vector2(200, 300);
+            position = new Vector2(200, 280);
 
 
 

@@ -32,8 +32,12 @@ namespace MohawkGame2D
             inputPrompt = Graphics.LoadTexture("MohawkGame2D/Textures/input_e.png");
 
             // Apple position & size
-            position = new Vector2(550, 600);
+            position = new Vector2(550, 615);
             size = new Vector2(modlyApple.Width, modlyApple.Height);
+
+            // make apple bigger
+
+
 
         }
         public void Update()
@@ -67,7 +71,7 @@ namespace MohawkGame2D
 
      
                 rotation += 30.0f * Time.DeltaTime;
-                Graphics.Scale = 0.10f;
+                Graphics.Scale = 0.1f;
                 Graphics.DrawSubset(modlyApple, position + size / 2.0f, new Vector2(0, 0), size, size / 2.0f);
             }
         }
