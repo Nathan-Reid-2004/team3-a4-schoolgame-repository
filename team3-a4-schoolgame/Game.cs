@@ -20,10 +20,6 @@ namespace MohawkGame2D
     public class Game
     {
         // Place your variables here:
-        float playerPosY = 100;
-        float playerPosX = 100;
-        bool isMoving = false;
-        Color playerColor = Color.Cyan;
 
         Desks drawDesks;
 

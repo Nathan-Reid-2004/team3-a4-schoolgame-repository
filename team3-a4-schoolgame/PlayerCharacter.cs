@@ -11,6 +11,8 @@ namespace MohawkGame2D
         //defining variables
         float playerPosY = 100;
         float playerPosX = 100;
+        float playerWidth = 25;
+        float playerHeight = 25;
         bool isMoving = false;
         Color playerColor = Color.Cyan;
 
@@ -39,7 +41,7 @@ namespace MohawkGame2D
 
             //draws player
             Draw.FillColor = (playerColor);
-            Draw.Circle(playerPosX, playerPosY, 40);
+            Draw.Rectangle(playerPosX, playerPosY, playerWidth, playerHeight);
         }
 
         //the function that allows the player to move horizontally and diagonally
