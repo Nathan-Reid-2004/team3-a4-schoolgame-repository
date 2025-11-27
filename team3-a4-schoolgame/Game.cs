@@ -2,6 +2,7 @@
 using Raylib_cs;
 using System;
 using System.ComponentModel;
+using System.Data;
 using System.Numerics;
 using System.Reflection.Metadata.Ecma335;
 
@@ -18,13 +19,33 @@ namespace MohawkGame2D
         float playerPosX = 100;
         bool isMoving = false;
         Color playerColor = Color.Cyan;
+
+        Desks drawDesks;
+
+        Walls drawWalls;
+
+        Interactables drawInteractables;
+
+        Characters drawCharacters;
+
+
+
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
         public void Setup()
         {
             Window.SetSize(1280, 800);
-            Window.SetTitle("Movement Test");
+            Window.SetTitle("Collision Test");
+            Window.TargetFPS = 60;
+
+            drawDesks = new Desks();
+
+            drawWalls = new Walls();
+
+            drawInteractables = new Interactables();
+
+            drawCharacters = new Characters();
         }
 
         /// <summary>
@@ -100,5 +121,14 @@ namespace MohawkGame2D
 
     }
 
+            Window.ClearBackground(Color.White);
+            drawDesks.Update();
+            drawWalls.Update();
+            drawInteractables.Update();
+            drawCharacters.Update();
+            
+        }
+
+}
 
 }
