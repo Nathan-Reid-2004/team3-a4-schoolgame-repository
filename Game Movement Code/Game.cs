@@ -3,6 +3,7 @@ using Raylib_cs;
 using System;
 using System.ComponentModel;
 using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
 
 // The namespace your code is in.
 namespace MohawkGame2D
@@ -17,14 +18,13 @@ namespace MohawkGame2D
         float playerPosX = 100;
         bool isMoving = false;
         Color playerColor = Color.Cyan;
-
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
         public void Setup()
         {
             Window.SetSize(1280, 800);
-            Window.SetTitle("Movement Shit");
+            Window.SetTitle("Movement Test");
         }
 
         /// <summary>
@@ -32,24 +32,29 @@ namespace MohawkGame2D
         /// </summary>
         public void Update()
         {
-            Window.ClearBackground(Color.White);
 
-            Movement();
+            Window.ClearBackground(Color.White);
+            //functions below run constantly
+            MovementMech();
             PlayerColour();
+            //updates player colour
             if (isMoving == false)
             {
-                playerColor=Color.Cyan;
+                playerColor = Color.Cyan;
             }
             else if (isMoving == true)
             {
                 playerColor = Color.Yellow;
             }
-            Draw.FillColor=(playerColor);
+            ///draws player
+            Draw.FillColor = (playerColor);
             Draw.Circle(playerPosX, playerPosY, 40);
 
-            
+
+
         }
-        public void Movement()
+        //the function that allows the player to move horizontally and diagonally
+        public void MovementMech()
         {
             if (Input.IsKeyboardKeyDown(KeyboardInput.W) || Input.IsKeyboardKeyDown(KeyboardInput.Up) || Input.IsKeyboardKeyDown(KeyboardInput.I))
             {
@@ -68,6 +73,7 @@ namespace MohawkGame2D
                 playerPosX += 6;
             }
         }
+        //the function that makes the player colour change. replace this with sprites
         public void PlayerColour()
         {
             if (Input.IsKeyboardKeyDown(KeyboardInput.W) || Input.IsKeyboardKeyDown(KeyboardInput.Up) || Input.IsKeyboardKeyDown(KeyboardInput.I))
@@ -91,6 +97,8 @@ namespace MohawkGame2D
                 isMoving = false;
             }
         }
+
     }
+
 
 }
