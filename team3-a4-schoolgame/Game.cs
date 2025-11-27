@@ -43,7 +43,8 @@ namespace MohawkGame2D
         public void Setup()
         {
            
-             Window.ClearBackground(Color.OffWhite);
+            Window.ClearBackground(Color.OffWhite);
+
 
 
             drawInteractables = new Interactables();
@@ -56,11 +57,17 @@ namespace MohawkGame2D
             Window.SetTitle("Collision Test");
             Window.TargetFPS = 60;
 
+
             drawDesks = new Desks();
 
             drawWalls = new Walls();
 
             character = new PlayerCharacter();
+            character.canMoveUp = true;
+            character.canMoveDown = true;
+            character.canMoveLeft = true;
+            character.canMoveRight = true;
+            
 
             mouse.Setup();
             cleaner.Setup();
@@ -79,7 +86,10 @@ namespace MohawkGame2D
 
 
         {
-            
+            character.canMoveLeft = true;
+            character.canMoveRight = true;
+            character.canMoveDown = true;
+            character.canMoveUp = true;
 
 
 
@@ -99,7 +109,7 @@ namespace MohawkGame2D
             apple.Update();
             mouse.Update();
             paper.Update();
-
+ 
             character.Update();
 
 

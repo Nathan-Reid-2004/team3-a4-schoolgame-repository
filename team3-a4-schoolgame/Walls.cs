@@ -86,9 +86,13 @@ namespace MohawkGame2D
 
                 isCollidingWall = leftCollisionWall && rightCollisionWall && topCollisionWall && bottomCollisionWall;
 
-                if (isCollidingWall)
+                if (isCollidingWall && character.playerPosY > 600)
                 {
-                    Draw.FillColor = Color.Green;
+                    character.playerPosY -= 6;
+                }
+                else if (isCollidingWall && character.playerPosY < 600)
+                {
+                    character.playerPosY += 6;
                 }
                 else
                 {
@@ -120,9 +124,13 @@ namespace MohawkGame2D
 
                 isCollidingWindow = leftCollisionWindow && rightCollisionWindow && topCollisionWindow && bottomCollisionWindow;
 
-                if (isCollidingWindow)
+                if (isCollidingWindow && character.playerPosX > 600)
                 {
-                    Draw.FillColor = Color.Green;
+                    character.playerPosX -= 6;
+                }
+                else if (isCollidingWindow && character.playerPosX < 600)
+                {
+                    character.playerPosX += 6;
                 }
                 else
                 {
@@ -159,7 +167,38 @@ namespace MohawkGame2D
 
             if (isCollidingDoor)
             {
-                Draw.FillColor = Color.Green;
+
+                if (topCollisionDoor && character.playerPosY > topEdgeDoor)
+                {
+                    character.canMoveUp = false;
+                    character.playerPosY = (character.playerPosY += 6);
+
+                }
+                if (bottomCollisionDoor && character.playerPosY < bottomEdgeDoor)
+                {
+
+
+                    character.canMoveDown = false;
+                    character.playerPosY = (character.playerPosY -= 6);
+                }
+                if (leftCollisionDoor && character.playerPosX > leftEdgeDoor)
+                {
+                    character.canMoveRight = false;
+                    character.playerPosX = (character.playerPosX += 6);
+                }
+                if (rightCollisionDoor && character.playerPosX < rightEdgeDoor)
+                {
+                    character.playerPosX = (character.playerPosX -= 6);
+                    character.canMoveLeft = false;
+                }
+                else
+                {
+                    leftCollisionDoor = false;
+                    rightCollisionDoor = false;
+                    topCollisionDoor = false;
+                    bottomCollisionDoor = false;
+                }
+
             }
             else
             {

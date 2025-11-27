@@ -9,10 +9,14 @@ namespace MohawkGame2D
     public class PlayerCharacter
     {
         //defining variables
-        float playerPosY = 100;
-        float playerPosX = 100;
+        public float playerPosY = 100;
+        public float playerPosX = 250;
         float playerWidth = 25;
         float playerHeight = 25;
+        public bool canMoveLeft = true;
+        public bool canMoveRight = true;
+        public bool canMoveDown = true;
+        public bool canMoveUp = true;
         bool isMoving = false;
         Color playerColor = Color.Cyan;
 
@@ -34,6 +38,7 @@ namespace MohawkGame2D
             MovementMech();
             PlayerColour();
 
+
             //updates player colour
             if (isMoving == false)
             {
@@ -46,8 +51,8 @@ namespace MohawkGame2D
 
             //draws player
             Draw.FillColor = (playerColor);
-            Draw.Rectangle(playerPosX, playerPosY, playerWidth, playerHeight);
 
+            Draw.Rectangle(playerPosX, playerPosY, playerWidth, playerHeight);
 
             //defining player character edges
             leftEdgePlayer = playerPosX;
@@ -59,19 +64,19 @@ namespace MohawkGame2D
         //the function that allows the player to move horizontally and diagonally
         public void MovementMech()
         {
-            if (Input.IsKeyboardKeyDown(KeyboardInput.W) || Input.IsKeyboardKeyDown(KeyboardInput.Up) || Input.IsKeyboardKeyDown(KeyboardInput.I))
+            if (canMoveUp == true && Input.IsKeyboardKeyDown(KeyboardInput.W) || Input.IsKeyboardKeyDown(KeyboardInput.Up) || Input.IsKeyboardKeyDown(KeyboardInput.I))
             {
                 playerPosY -= 6;
             }
-            if (Input.IsKeyboardKeyDown(KeyboardInput.S) || Input.IsKeyboardKeyDown(KeyboardInput.Down) || Input.IsKeyboardKeyDown(KeyboardInput.K))
+            if (canMoveDown == true && Input.IsKeyboardKeyDown(KeyboardInput.S) || Input.IsKeyboardKeyDown(KeyboardInput.Down) || Input.IsKeyboardKeyDown(KeyboardInput.K))
             {
                 playerPosY += 6;
             }
-            if (Input.IsKeyboardKeyDown(KeyboardInput.A) || Input.IsKeyboardKeyDown(KeyboardInput.Left) || Input.IsKeyboardKeyDown(KeyboardInput.J))
+            if (canMoveLeft == true && Input.IsKeyboardKeyDown(KeyboardInput.A) || Input.IsKeyboardKeyDown(KeyboardInput.Left) || Input.IsKeyboardKeyDown(KeyboardInput.J))
             {
                 playerPosX -= 6;
             }
-            if (Input.IsKeyboardKeyDown(KeyboardInput.D) || Input.IsKeyboardKeyDown(KeyboardInput.Right) || Input.IsKeyboardKeyDown(KeyboardInput.L))
+            if (canMoveRight == true && Input.IsKeyboardKeyDown(KeyboardInput.D) || Input.IsKeyboardKeyDown(KeyboardInput.Right) || Input.IsKeyboardKeyDown(KeyboardInput.L))
             {
                 playerPosX += 6;
             }
