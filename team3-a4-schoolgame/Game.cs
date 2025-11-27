@@ -44,12 +44,12 @@ namespace MohawkGame2D
         /// </summary>
         public void Setup()
         {
-            Window.SetTitle("untitled");
-            Window.SetSize(1280,800);
-            Window.ClearBackground(Color.OffWhite);
+           
+             Window.ClearBackground(Color.OffWhite);
 
 
-
+            drawInteractables = new Interactables();
+            drawCharacters = new Characters();
             mouse = new Mouse();
             cleaner = new Cleaner();
             apple = new Apple();
