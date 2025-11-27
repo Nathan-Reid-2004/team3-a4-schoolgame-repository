@@ -35,7 +35,7 @@ namespace MohawkGame2D
         public void Setup()
         {
             Window.SetTitle("untitled");
-            Window.SetSize(800, 600);
+            Window.SetSize(1280,800);
             Window.ClearBackground(Color.OffWhite);
 
 
