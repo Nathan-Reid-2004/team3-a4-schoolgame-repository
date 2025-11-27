@@ -1,127 +1,31 @@
-﻿// Include the namespaces (code libraries) you need below.
-using Raylib_cs;
-using System;
-using System.ComponentModel;
-using System.Data;
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Principal;
-using MohawkGame2D;
-
-
-// The namespace your code is in.
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MohawkGame2D
 {
-    /// <summary>
-    ///     Your game code goes inside this class!
-    /// </summary>
-    public class Game
+    public class PlayerCharacter
     {
-        // Place your variables here:
+        //defining variables
         float playerPosY = 100;
         float playerPosX = 100;
         bool isMoving = false;
         Color playerColor = Color.Cyan;
 
-        Desks drawDesks;
-
-        Walls drawWalls;
-
-        Mouse mouse;
-        Cleaner cleaner;
-        Apple apple;
-        Paper paper;
-        Interactables drawInteractables;
-
-        Characters drawCharacters;
-
-        PlayerCharacter character;
-
-
-
-        /// <summary>
-        ///     Setup runs once before the game loop begins.
-        /// </summary>
+        //setup and update functions
         public void Setup()
         {
-           
-             Window.ClearBackground(Color.OffWhite);
-
-
-            drawInteractables = new Interactables();
-            drawCharacters = new Characters();
-            mouse = new Mouse();
-            cleaner = new Cleaner();
-            apple = new Apple();
-            paper = new Paper();
-            Window.SetSize(1280, 800);
-            Window.SetTitle("Collision Test");
-            Window.TargetFPS = 60;
-
-            drawDesks = new Desks();
-
-            drawWalls = new Walls();
-
-            character = new PlayerCharacter();
-
-            mouse.Setup();
-            cleaner.Setup();
-            apple.Setup();
-            paper.Setup();
-
-
-
 
         }
 
-        /// <summary>
-        ///     Update runs every frame.
-        /// </summary>
         public void Update()
-
-
         {
-            cleaner.Update();
-            apple.Update();
-            mouse.Update();
-            paper.Update();
-
-
-
-
-
-
-
-
-
-
-            Window.ClearBackground(Color.White);
-            //functions below run constantly
             MovementMech();
             PlayerColour();
-            //updates player colour
-            if (isMoving == false)
-            {
-                playerColor = Color.Cyan;
-            }
-            else if (isMoving == true)
-            {
-                playerColor = Color.Yellow;
-            }
-            ///draws player
-            Draw.FillColor = (playerColor);
-            Draw.Circle(playerPosX, playerPosY, 40);
-            drawDesks.Update();
-            drawWalls.Update();
-            drawInteractables.Update();
-            drawCharacters.Update();
-
-            character.Update();
-
-
         }
+
         //the function that allows the player to move horizontally and diagonally
         public void MovementMech()
         {
@@ -167,9 +71,6 @@ namespace MohawkGame2D
             }
         }
 
+
     }
-
-
-
 }
-

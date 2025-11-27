@@ -36,6 +36,10 @@ namespace MohawkGame2D
         public float shelfHeight;
 
 
+        //collision booleans for each object
+        public bool leftCollisionDeskLeft;
+
+
         //setup and update functions
         public void Setup()
         {
@@ -65,6 +69,8 @@ namespace MohawkGame2D
                 float rightEdgeDeskLeft = deskLeftPositionX + deskLeftWidth;
                 float topEdgeDeskLeft = deskLeftPositionY;
                 float bottomEdgeDeskLeft = deskLeftPositionY + deskLeftHeight;
+
+
             }
 
             //drawing all student desks on the right side of the room
