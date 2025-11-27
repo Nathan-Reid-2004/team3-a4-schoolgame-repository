@@ -178,7 +178,7 @@ namespace MohawkGame2D
             float bottomEdgeProfDesk = profDeskPositionY + profDeskHeight;
 
 
-            //making collision detection between the player character hitbox and desk hitboxes
+            //making collision detection between the player character hitbox and prof desk hitbox
             leftCollisionProfDesk = character.leftEdgePlayer < rightEdgeProfDesk;
             rightCollisionProfDesk = character.rightEdgePlayer > leftEdgeProfDesk;
             topCollisionProfDesk = character.topEdgePlayer < bottomEdgeProfDesk;
@@ -213,7 +213,7 @@ namespace MohawkGame2D
                 float bottomEdgeProjector = projectorPositionY + projectorHeight;
 
 
-                //making collision detection between the player character hitbox and desk hitboxes
+                //making collision detection between the player character hitbox and projector hitboxes
                 leftCollisionProjector = character.leftEdgePlayer < rightEdgeProjector;
                 rightCollisionProjector = character.rightEdgePlayer > leftEdgeProjector;
                 topCollisionProjector = character.topEdgePlayer < bottomEdgeProjector;
@@ -246,7 +246,7 @@ namespace MohawkGame2D
             float bottomEdgeShelf = shelfPositionY + shelfHeight;
 
 
-            //making collision detection between the player character hitbox and desk hitboxes
+            //making collision detection between the player character hitbox and shelf hitbox
             leftCollisionShelf = character.leftEdgePlayer < rightEdgeShelf;
             rightCollisionShelf = character.rightEdgePlayer > leftEdgeShelf;
             topCollisionShelf = character.topEdgePlayer < bottomEdgeShelf;

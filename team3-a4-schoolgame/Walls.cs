@@ -78,7 +78,7 @@ namespace MohawkGame2D
                 float bottomEdgeWall = wallPositionY + wallHeight;
 
 
-                //making collision detection between the player character hitbox and desk hitboxes
+                //making collision detection between the player character hitbox and wall hitboxes
                 leftCollisionWall = character.leftEdgePlayer < rightEdgeWall;
                 rightCollisionWall = character.rightEdgePlayer > leftEdgeWall;
                 topCollisionWall = character.topEdgePlayer < bottomEdgeWall;
@@ -112,7 +112,7 @@ namespace MohawkGame2D
                 float bottomEdgeWindow = windowPositionY + windowHeight;
 
 
-                //making collision detection between the player character hitbox and desk hitboxes
+                //making collision detection between the player character hitbox and window hitboxes
                 leftCollisionWindow = character.leftEdgePlayer < rightEdgeWindow;
                 rightCollisionWindow = character.rightEdgePlayer > leftEdgeWindow;
                 topCollisionWindow = character.topEdgePlayer < bottomEdgeWindow;
@@ -149,7 +149,7 @@ namespace MohawkGame2D
             float bottomEdgeDoor = doorPositionY + doorHeight;
 
 
-            //making collision detection between the player character hitbox and desk hitboxes
+            //making collision detection between the player character hitbox and door hitbox
             leftCollisionDoor = character.leftEdgePlayer < rightEdgeDoor;
             rightCollisionDoor = character.rightEdgePlayer > leftEdgeDoor;
             topCollisionDoor = character.topEdgePlayer < bottomEdgeDoor;
