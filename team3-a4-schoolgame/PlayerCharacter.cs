@@ -16,6 +16,11 @@ namespace MohawkGame2D
         bool isMoving = false;
         Color playerColor = Color.Cyan;
 
+        public float leftEdgePlayer;
+        public float rightEdgePlayer;
+        public float topEdgePlayer;
+        public float bottomEdgePlayer;
+
         //setup and update functions
         public void Setup()
         {
@@ -42,6 +47,13 @@ namespace MohawkGame2D
             //draws player
             Draw.FillColor = (playerColor);
             Draw.Rectangle(playerPosX, playerPosY, playerWidth, playerHeight);
+
+
+            //defining player character edges
+            leftEdgePlayer = playerPosX;
+            rightEdgePlayer = playerPosX + playerWidth;
+            topEdgePlayer = playerPosY;
+            bottomEdgePlayer = playerPosY + playerHeight;
         }
 
         //the function that allows the player to move horizontally and diagonally

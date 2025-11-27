@@ -20,20 +20,19 @@ namespace MohawkGame2D
     public class Game
     {
         // Place your variables here:
-
+        
         Desks drawDesks;
-
         Walls drawWalls;
-
         Mouse mouse;
         Cleaner cleaner;
         Apple apple;
         Paper paper;
         Interactables drawInteractables;
-
         Characters drawCharacters;
+        Npc Npc;
 
         PlayerCharacter character;
+
 
 
 
@@ -52,6 +51,8 @@ namespace MohawkGame2D
             cleaner = new Cleaner();
             apple = new Apple();
             paper = new Paper();
+            Npc = new Npc();
+
             Window.SetSize(1280, 800);
             Window.SetTitle("Collision Test");
             Window.TargetFPS = 60;
@@ -66,6 +67,8 @@ namespace MohawkGame2D
             cleaner.Setup();
             apple.Setup();
             paper.Setup();
+            Npc.Setup();
+
 
 
 
@@ -99,8 +102,7 @@ namespace MohawkGame2D
             apple.Update();
             mouse.Update();
             paper.Update();
-
-            character.Update();
+            Npc.Update();
 
 
         }
