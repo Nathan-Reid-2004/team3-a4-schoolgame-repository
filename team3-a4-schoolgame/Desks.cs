@@ -45,19 +45,51 @@ namespace MohawkGame2D
         public bool isCollidingDeskLeft;
 
 
+        public bool leftCollisionDeskRight;
+        public bool rightCollisionDeskRight;
+        public bool topCollisionDeskRight;
+        public bool bottomCollisionDeskRight;
+
+        public bool isCollidingDeskRight;
+
+
+        public bool leftCollisionProfDesk;
+        public bool rightCollisionProfDesk;
+        public bool topCollisionProfDesk;
+        public bool bottomCollisionProfDesk;
+
+        public bool isCollidingProfDesk;
+
+
+        public bool leftCollisionProjector;
+        public bool rightCollisionProjector;
+        public bool topCollisionProjector;
+        public bool bottomCollisionProjector;
+
+        public bool isCollidingProjector;
+
+
+        public bool leftCollisionShelf;
+        public bool rightCollisionShelf;
+        public bool topCollisionShelf;
+        public bool bottomCollisionShelf;
+
+        public bool isCollidingShelf;
+
+
         //setup and update functions
         public void Setup()
         {
 
         }
 
-        public void Update()
+        public void Update(PlayerCharacter character)
         {
-            StudentDesks();
-            MiscDesksPlusProjector();
+            StudentDesks(character);
+            MiscDesksPlusProjector(character);
         }
 
-        void StudentDesks()
+        void StudentDesks(PlayerCharacter character)
         {
             //drawing all student desks on the left side of the room
             deskLeftPositionX = 150;
@@ -66,8 +98,6 @@ namespace MohawkGame2D
 
             for (deskLeftPositionY = 200; deskLeftPositionY < 500; deskLeftPositionY += 120)
             {
-                Draw.FillColor = Color.Red;
-                Draw.Rectangle(deskLeftPositionX, deskLeftPositionY, deskLeftWidth, deskLeftHeight);
 
                 //defining left-side student desks edges
                 float leftEdgeDeskLeft = deskLeftPositionX;
@@ -77,6 +107,22 @@ namespace MohawkGame2D
 
                 
                 //making collision detection between the player character hitbox and desk hitboxes
+                leftCollisionDeskLeft = character.leftEdgePlayer < rightEdgeDeskLeft;
+                rightCollisionDeskLeft = character.rightEdgePlayer > leftEdgeDeskLeft;
+                topCollisionDeskLeft = character.topEdgePlayer < bottomEdgeDeskLeft;
+                bottomCollisionDeskLeft = character.bottomEdgePlayer > topEdgeDeskLeft;
+
+                isCollidingDeskLeft = leftCollisionDeskLeft && rightCollisionDeskLeft && topCollisionDeskLeft && bottomCollisionDeskLeft;
+
+                if (isCollidingDeskLeft)
+                {
+                    Draw.FillColor = Color.Green;
+                }
+                else
+                {
+                    Draw.FillColor = Color.Red;
+                }
+                Draw.Rectangle(deskLeftPositionX, deskLeftPositionY, deskLeftWidth, deskLeftHeight);
 
 
             }
@@ -88,19 +134,36 @@ namespace MohawkGame2D
 
             for (deskRightPositionY = 200; deskRightPositionY < 500; deskRightPositionY += 120)
             {
-                Draw.FillColor = Color.Red;
-                Draw.Rectangle(deskRightPositionX, deskRightPositionY, deskRightWidth, deskRightHeight);
 
                 //defining right-side student desks edges
                 float leftEdgeDeskRight = deskRightPositionX;
                 float rightEdgeDeskRight = deskRightPositionX + deskRightWidth;
                 float topEdgeDeskRight = deskRightPositionY;
                 float bottomEdgeDeskRight = deskRightPositionY + deskRightHeight;
+
+
+                //making collision detection between the player character hitbox and desk hitboxes
+                leftCollisionDeskRight = character.leftEdgePlayer < rightEdgeDeskRight;
+                rightCollisionDeskRight = character.rightEdgePlayer > leftEdgeDeskRight;
+                topCollisionDeskRight = character.topEdgePlayer < bottomEdgeDeskRight;
+                bottomCollisionDeskRight = character.bottomEdgePlayer > topEdgeDeskRight;
+
+                isCollidingDeskRight = leftCollisionDeskRight && rightCollisionDeskRight && topCollisionDeskRight && bottomCollisionDeskRight;
+
+                if (isCollidingDeskRight)
+                {
+                    Draw.FillColor = Color.Green;
+                }
+                else
+                {
+                    Draw.FillColor = Color.Red;
+                }
+                Draw.Rectangle(deskRightPositionX, deskRightPositionY, deskRightWidth, deskRightHeight);
             }
 
         }
 
-        void MiscDesksPlusProjector()
+        void MiscDesksPlusProjector(PlayerCharacter character)
         {
             //drawing professor's desk
             profDeskPositionX = 500;
@@ -108,14 +171,32 @@ namespace MohawkGame2D
             profDeskWidth = 250;
             profDeskHeight = 75;
 
-            Draw.FillColor = Color.Red;
-            Draw.Rectangle(profDeskPositionX, profDeskPositionY, profDeskWidth, profDeskHeight);
-
             //defining prof desk edges
             float leftEdgeProfDesk = profDeskPositionX;
             float rightEdgeProfDesk = profDeskPositionX + profDeskWidth;
             float topEdgeProfDesk = profDeskPositionY;
             float bottomEdgeProfDesk = profDeskPositionY + profDeskHeight;
+
+
+            //making collision detection between the player character hitbox and prof desk hitbox
+            leftCollisionProfDesk = character.leftEdgePlayer < rightEdgeProfDesk;
+            rightCollisionProfDesk = character.rightEdgePlayer > leftEdgeProfDesk;
+            topCollisionProfDesk = character.topEdgePlayer < bottomEdgeProfDesk;
+            bottomCollisionProfDesk = character.bottomEdgePlayer > topEdgeProfDesk;
+
+            isCollidingProfDesk = leftCollisionProfDesk && rightCollisionProfDesk && topCollisionProfDesk && bottomCollisionProfDesk;
+
+            if (isCollidingProfDesk)
+            {
+                Draw.FillColor = Color.Green;
+            }
+            else
+            {
+                Draw.FillColor = Color.Red;
+            }
+            Draw.Rectangle(profDeskPositionX, profDeskPositionY, profDeskWidth, profDeskHeight);
+
+
 
             //drawing projectors
             projectorPositionY = 550;
@@ -124,14 +205,31 @@ namespace MohawkGame2D
 
             for (projectorPositionX = 130; projectorPositionX < 1280; projectorPositionX += 830)
             {
-                Draw.FillColor = Color.Red;
-                Draw.Rectangle(projectorPositionX, projectorPositionY, projectorWidth, projectorHeight);
 
                 //defining projector edges
                 float leftEdgeProjector = projectorPositionX;
                 float rightEdgeProjector = projectorPositionX + projectorWidth;
                 float topEdgeProjector = projectorPositionY;
                 float bottomEdgeProjector = projectorPositionY + projectorHeight;
+
+
+                //making collision detection between the player character hitbox and projector hitboxes
+                leftCollisionProjector = character.leftEdgePlayer < rightEdgeProjector;
+                rightCollisionProjector = character.rightEdgePlayer > leftEdgeProjector;
+                topCollisionProjector = character.topEdgePlayer < bottomEdgeProjector;
+                bottomCollisionProjector = character.bottomEdgePlayer > topEdgeProjector;
+
+                isCollidingProjector = leftCollisionProjector && rightCollisionProjector && topCollisionProjector && bottomCollisionProjector;
+
+                if (isCollidingProjector)
+                {
+                    Draw.FillColor = Color.Green;
+                }
+                else
+                {
+                    Draw.FillColor = Color.Red;
+                }
+                Draw.Rectangle(projectorPositionX, projectorPositionY, projectorWidth, projectorHeight);
 
             }
 
@@ -141,14 +239,30 @@ namespace MohawkGame2D
             shelfWidth = 400;
             shelfHeight = 75;
 
-            Draw.FillColor = Color.Red;
-            Draw.Rectangle(shelfPositionX, shelfPositionY, shelfWidth, shelfHeight);
-
             //defining shelf edges
             float leftEdgeShelf = shelfPositionX;
             float rightEdgeShelf = shelfPositionX + shelfWidth;
             float topEdgeShelf = shelfPositionY;
             float bottomEdgeShelf = shelfPositionY + shelfHeight;
+
+
+            //making collision detection between the player character hitbox and shelf hitbox
+            leftCollisionShelf = character.leftEdgePlayer < rightEdgeShelf;
+            rightCollisionShelf = character.rightEdgePlayer > leftEdgeShelf;
+            topCollisionShelf = character.topEdgePlayer < bottomEdgeShelf;
+            bottomCollisionShelf = character.bottomEdgePlayer > topEdgeShelf;
+
+            isCollidingShelf = leftCollisionShelf && rightCollisionShelf && topCollisionShelf && bottomCollisionShelf;
+
+            if (isCollidingShelf)
+            {
+                Draw.FillColor = Color.Green;
+            }
+            else
+            {
+                Draw.FillColor = Color.Red;
+            }
+            Draw.Rectangle(shelfPositionX, shelfPositionY, shelfWidth, shelfHeight);
         }
 
     }
