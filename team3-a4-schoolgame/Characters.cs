@@ -66,6 +66,7 @@ namespace MohawkGame2D
         public bool isCollidingC4;
 
 
+
         //setup and update functions
         public void Setup()
         {
@@ -206,11 +207,15 @@ namespace MohawkGame2D
             {
                 Draw.FillColor = limeGreen;
             }
+
             Draw.Rectangle(C4PositionX, C4PositionY, C4Width, C4Height);
+
+            
         }
-
-
-
-
     }
+
+
+
+
 }
+

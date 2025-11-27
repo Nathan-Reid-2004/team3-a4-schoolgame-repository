@@ -8,30 +8,62 @@ using System.Threading.Tasks;
 
 namespace team3_a4_schoolgame
 {
-    
+
     public class Dialogue
     {
-        public float radius = 50.0f;
-        public Vector2 position = new Vector2(40, 40);
-        
-        bool itemObtained = false;
-        
+
+        public bool isCollidingC4;
+
+        public bool hasInteracted = false;
+
+        public bool taken = false;
+
         public void update()
         {
-            Draw.LineColor = Color.Black;
-            Draw.Circle(position, radius);
+            TeacherInteraction();
         }
 
-        void ProcessInputs()
+        void TeacherInteraction()
         {
-            Vector2 mouseInsideCircle = Input.GetMousePosition() - position;
-            bool insideCircle = mouseInsideCircle.Length() < radius;
 
-            if (insideCircle && Input.IsMouseButtonPressed(MouseInput.Left))
+
+
+
+            if (!(isCollidingC4) && (taken = false))
             {
-                itemObtained = true;
+                hasInteracted = true;
+            }
+
+            if (hasInteracted)
+            {
+                Draw.LineColor = Color.Black;
+                Draw.FillColor = Color.Red;
+                Draw.Rectangle(0, 660, 1280, 800);
+
+                Text.Draw("Hey, great timing!\nClass is just about to start and I can't find my mouse anywhere!\nPlease help me find it!", 40, 680);
+
+            }
+
+            if (!(isCollidingC4 = false) || (taken = true))
+            {
+                hasInteracted = false;
+            }
+            
+            if (Input.IsMouseButtonPressed(MouseInput.Left))
+            {
+                taken = true;
+            }
+
+            if (taken && isCollidingC4)
+            {
+                Draw.LineColor = Color.Black;
+                Draw.FillColor = Color.Red;
+                Draw.Rectangle(0, 660, 1280, 800);
+
+                Text.Draw("You found it!\nThank you so much!!\nYou'll get an extra 10 marks on your next text ;)", 40, 680);
             }
         }
+
 
 
     }

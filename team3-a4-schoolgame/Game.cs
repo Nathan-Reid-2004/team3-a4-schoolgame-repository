@@ -7,6 +7,7 @@ using System.Numerics;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Principal;
 using MohawkGame2D;
+using team3_a4_schoolgame;
 
 
 // The namespace your code is in.
@@ -20,11 +21,9 @@ namespace MohawkGame2D
     public class Game
     {
         // Place your variables here:
-        public float radius = 50.0f;
-        public Vector2 position = new Vector2(40, 40);
 
         Desks drawDesks;
-        bool itemObtained = false;
+        
 
         Walls drawWalls;
 
@@ -37,7 +36,6 @@ namespace MohawkGame2D
         Characters drawCharacters;
 
         PlayerCharacter character;
-
 
 
         /// <summary>
@@ -65,10 +63,13 @@ namespace MohawkGame2D
 
             character = new PlayerCharacter();
 
+
             mouse.Setup();
             cleaner.Setup();
             apple.Setup();
             paper.Setup();
+
+            
 
 
 
@@ -79,39 +80,15 @@ namespace MohawkGame2D
         ///     Update runs every frame.
         /// </summary>
         public void Update()
-
-
         {
-            Draw.LineColor = Color.Black;
-            Draw.Circle(position, radius);
+            ProcessInputs();
 
-
-
-
-            if (Input.IsMouseButtonPressed(MouseInput.Left))
-            {
-
-                //first dialogue
-                Text.Draw("Hey, great timing!\nClass is just about to start and I can't find my mouse anywhere!\nPlease help me find it!", 40, 650);
-            } 
-
-            //talking to teatcher after first dialogue
-
+ 
+            
         }
 
         void ProcessInputs()
         {
-            Vector2 mouseInsideCircle = Input.GetMousePosition() - position;
-            bool insideCircle = mouseInsideCircle.Length() < radius;
-
-            
-
-
-
-
-
-
-
 
 
 
@@ -128,10 +105,7 @@ namespace MohawkGame2D
             character.Update();
 
 
-            if (insideCircle && Input.IsMouseButtonPressed(MouseInput.Left))
-            {
-                itemObtained = true;
-            }
+
         }
         
 
