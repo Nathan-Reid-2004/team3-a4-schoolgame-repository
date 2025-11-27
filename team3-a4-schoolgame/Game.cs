@@ -70,7 +70,10 @@ namespace MohawkGame2D
             ///draws player
             Draw.FillColor = (playerColor);
             Draw.Circle(playerPosX, playerPosY, 40);
-
+            drawDesks.Update();
+            drawWalls.Update();
+            drawInteractables.Update();
+            drawCharacters.Update();
 
 
         }
@@ -121,14 +124,7 @@ namespace MohawkGame2D
 
     }
 
-            Window.ClearBackground(Color.White);
-            drawDesks.Update();
-            drawWalls.Update();
-            drawInteractables.Update();
-            drawCharacters.Update();
-            
-        }
+
 
 }
 
-}
