@@ -79,10 +79,7 @@ namespace MohawkGame2D
 
 
         {
-            cleaner.Update();
-            apple.Update();
-            mouse.Update();
-            paper.Update();
+            
 
 
 
@@ -98,6 +95,10 @@ namespace MohawkGame2D
             drawWalls.Update();
             drawInteractables.Update();
             drawCharacters.Update();
+            cleaner.Update();
+            apple.Update();
+            mouse.Update();
+            paper.Update();
 
             character.Update();
 

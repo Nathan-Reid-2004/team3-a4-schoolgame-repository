@@ -37,7 +37,7 @@ namespace MohawkGame2D
             // Cleaner position and size
 
             size = new Vector2(surfaceCleaner.Width, surfaceCleaner.Height);
-            position = new Vector2(650, 125);
+            position = new Vector2(650, 140);
 
 
         }
