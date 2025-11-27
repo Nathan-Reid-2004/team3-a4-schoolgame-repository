@@ -92,7 +92,7 @@ namespace MohawkGame2D
 
             Window.ClearBackground(Color.White);
             drawDesks.Update(character);
-            drawWalls.Update();
+            drawWalls.Update(character);
             drawInteractables.Update();
             drawCharacters.Update();
             cleaner.Update();
