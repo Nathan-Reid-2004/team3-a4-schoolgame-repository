@@ -20,6 +20,8 @@ namespace MohawkGame2D
 
         Interactables drawInteractables;
 
+        Characters drawCharacters;
+
 
 
         /// <summary>
@@ -36,6 +38,8 @@ namespace MohawkGame2D
             drawWalls = new Walls();
 
             drawInteractables = new Interactables();
+
+            drawCharacters = new Characters();
         }
 
         /// <summary>
@@ -47,6 +51,7 @@ namespace MohawkGame2D
             drawDesks.Update();
             drawWalls.Update();
             drawInteractables.Update();
+            drawCharacters.Update();
             
         }
 
