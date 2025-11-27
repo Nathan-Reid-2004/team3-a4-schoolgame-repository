@@ -11,6 +11,7 @@ namespace MohawkGame2D
 {
     public class Apple
     {
+        Interactables interactables = new Interactables();
         public Vector2 position;
         Vector2 size;
         Texture2D modlyApple;
@@ -28,6 +29,7 @@ namespace MohawkGame2D
 
         public void Setup()
         {
+            interactables.Setup();
             modlyApple = Graphics.LoadTexture("MohawkGame2D/Textures/moldy_apple.png");
             inputPrompt = Graphics.LoadTexture("MohawkGame2D/Textures/input_e.png");
 
@@ -52,7 +54,7 @@ namespace MohawkGame2D
 
             hover = true;
             // when pressing E to take the apple
-            if (Input.IsKeyboardKeyPressed(KeyboardInput.E))
+            if (Input.IsKeyboardKeyPressed(KeyboardInput.E) && interactables.isCollidingApple == true)
             {
                 taken = true;
             }

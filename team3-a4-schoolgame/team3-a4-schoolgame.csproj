@@ -24,10 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MohawkGame2D/Textures" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Apple.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
@@ -46,6 +42,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="MohawkGame2D\Textures\char1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Textures\char2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Textures\char3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="MohawkGame2D\Textures\crumpled_paper.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -59,6 +64,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="MohawkGame2D\Textures\surface_cleaner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Textures\teacher.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Textures\walk1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Textures\walk2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Textures\walkf1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MohawkGame2D\Textures\walkf2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

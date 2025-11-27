@@ -11,7 +11,6 @@ namespace MohawkGame2D
         //defining variables
 
         Color darkRed = new Color("#800000");
-
         public float applePositionX;
         public float applePositionY;
         public float appleWidth;
@@ -100,7 +99,7 @@ namespace MohawkGame2D
 
             isCollidingApple = leftCollisionApple && rightCollisionApple && topCollisionApple && bottomCollisionApple;
 
-            if (isCollidingApple)
+            if (isCollidingApple && (Input.IsKeyboardKeyPressed(KeyboardInput.E)))
             {
                 Draw.FillColor = Color.Green;
             }

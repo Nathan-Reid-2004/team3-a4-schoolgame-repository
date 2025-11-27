@@ -85,8 +85,10 @@ namespace MohawkGame2D
 
         public void Update(PlayerCharacter character)
         {
+
             StudentDesks(character);
             MiscDesksPlusProjector(character);
+
         }
 
         void StudentDesks(PlayerCharacter character)
@@ -105,7 +107,7 @@ namespace MohawkGame2D
                 float topEdgeDeskLeft = deskLeftPositionY;
                 float bottomEdgeDeskLeft = deskLeftPositionY + deskLeftHeight;
 
-                
+
                 //making collision detection between the player character hitbox and desk hitboxes
                 leftCollisionDeskLeft = character.leftEdgePlayer < rightEdgeDeskLeft;
                 rightCollisionDeskLeft = character.rightEdgePlayer > leftEdgeDeskLeft;
@@ -116,10 +118,42 @@ namespace MohawkGame2D
 
                 if (isCollidingDeskLeft)
                 {
-                    Draw.FillColor = Color.Green;
+                    
+                    if (topCollisionDeskLeft && character.playerPosY > topEdgeDeskLeft)
+                    {
+                        character.canMoveUp = false;
+                        character.playerPosY = (character.playerPosY += 6);
+
+                    }
+                    if (bottomCollisionDeskLeft && character.playerPosY < bottomEdgeDeskLeft)
+                    {
+                    
+
+                        character.canMoveDown = false;
+                        character.playerPosY = (character.playerPosY -= 6);
+                    }
+                    if (leftCollisionDeskLeft && character.playerPosX > leftEdgeDeskLeft)
+                    {
+                        character.canMoveRight = false;
+                        character.playerPosX = (character.playerPosX += 6);
+                    }
+                    if (rightCollisionDeskLeft && character.playerPosX < rightEdgeDeskLeft)
+                    {
+                        character.playerPosX = (character.playerPosX -= 6);
+                        character.canMoveLeft = false;
+                    }
+                    else
+                    {
+                        leftCollisionDeskLeft = false;
+                        rightCollisionDeskLeft = false;
+                        topCollisionDeskLeft = false;
+                        bottomCollisionDeskLeft = false;
+                    }
+                    
                 }
                 else
                 {
+
                     Draw.FillColor = Color.Red;
                 }
                 Draw.Rectangle(deskLeftPositionX, deskLeftPositionY, deskLeftWidth, deskLeftHeight);
@@ -152,7 +186,38 @@ namespace MohawkGame2D
 
                 if (isCollidingDeskRight)
                 {
-                    Draw.FillColor = Color.Green;
+
+                    if (topCollisionDeskRight && character.playerPosY > topEdgeDeskRight)
+                    {
+                        character.canMoveUp = false;
+                        character.playerPosY = (character.playerPosY += 6);
+
+                    }
+                    if (bottomCollisionDeskRight && character.playerPosY < bottomEdgeDeskRight)
+                    {
+
+
+                        character.canMoveDown = false;
+                        character.playerPosY = (character.playerPosY -= 6);
+                    }
+                    if (leftCollisionDeskRight && character.playerPosX > leftEdgeDeskRight)
+                    {
+                        character.canMoveRight = false;
+                        character.playerPosX = (character.playerPosX += 6);
+                    }
+                    if (rightCollisionDeskLeft && character.playerPosX < rightEdgeDeskRight)
+                    {
+                        character.playerPosX = (character.playerPosX -= 6);
+                        character.canMoveLeft = false;
+                    }
+                    else
+                    {
+                        leftCollisionDeskRight = false;
+                        rightCollisionDeskRight = false;
+                        topCollisionDeskRight = false;
+                        bottomCollisionDeskRight = false;
+                    }
+
                 }
                 else
                 {
@@ -188,7 +253,38 @@ namespace MohawkGame2D
 
             if (isCollidingProfDesk)
             {
-                Draw.FillColor = Color.Green;
+
+                if (topCollisionProfDesk && character.playerPosY > topEdgeProfDesk)
+                {
+                    character.canMoveUp = false;
+                    character.playerPosY = (character.playerPosY += 6);
+
+                }
+                if (bottomCollisionProfDesk && character.playerPosY < bottomEdgeProfDesk)
+                {
+
+
+                    character.canMoveDown = false;
+                    character.playerPosY = (character.playerPosY -= 6);
+                }
+                if (leftCollisionProfDesk && character.playerPosX > leftEdgeProfDesk)
+                {
+                    character.canMoveRight = false;
+                    character.playerPosX = (character.playerPosX += 6);
+                }
+                if (rightCollisionProfDesk && character.playerPosX < rightEdgeProfDesk)
+                {
+                    character.playerPosX = (character.playerPosX -= 6);
+                    character.canMoveLeft = false;
+                }
+                else
+                {
+                    leftCollisionProfDesk = false;
+                    rightCollisionProfDesk = false;
+                    topCollisionProfDesk = false;
+                    bottomCollisionProfDesk = false;
+                }
+
             }
             else
             {
@@ -223,7 +319,38 @@ namespace MohawkGame2D
 
                 if (isCollidingProjector)
                 {
-                    Draw.FillColor = Color.Green;
+
+                    if (topCollisionProjector && character.playerPosY > topEdgeProjector)
+                    {
+                        character.canMoveUp = false;
+                        character.playerPosY = (character.playerPosY += 6);
+
+                    }
+                    if (bottomCollisionProjector && character.playerPosY < bottomEdgeProjector)
+                    {
+
+
+                        character.canMoveDown = false;
+                        character.playerPosY = (character.playerPosY -= 6);
+                    }
+                    if (leftCollisionProjector && character.playerPosX > leftEdgeProjector)
+                    {
+                        character.canMoveRight = false;
+                        character.playerPosX = (character.playerPosX += 6);
+                    }
+                    if (rightCollisionProjector && character.playerPosX < rightEdgeProjector)
+                    {
+                        character.playerPosX = (character.playerPosX -= 6);
+                        character.canMoveLeft = false;
+                    }
+                    else
+                    {
+                        leftCollisionProjector = false;
+                        rightCollisionProjector = false;
+                        topCollisionProjector = false;
+                        bottomCollisionProjector = false;
+                    }
+
                 }
                 else
                 {
@@ -256,7 +383,38 @@ namespace MohawkGame2D
 
             if (isCollidingShelf)
             {
-                Draw.FillColor = Color.Green;
+
+                if (topCollisionShelf && character.playerPosY > topEdgeShelf)
+                {
+                    character.canMoveUp = false;
+                    character.playerPosY = (character.playerPosY += 6);
+
+                }
+                if (bottomCollisionShelf && character.playerPosY < bottomEdgeShelf)
+                {
+
+
+                    character.canMoveDown = false;
+                    character.playerPosY = (character.playerPosY -= 6);
+                }
+                if (leftCollisionShelf && character.playerPosX > leftEdgeShelf)
+                {
+                    character.canMoveRight = false;
+                    character.playerPosX = (character.playerPosX += 6);
+                }
+                if (rightCollisionShelf && character.playerPosX < rightEdgeShelf)
+                {
+                    character.playerPosX = (character.playerPosX -= 6);
+                    character.canMoveLeft = false;
+                }
+                else
+                {
+                    leftCollisionShelf = false;
+                    rightCollisionShelf = false;
+                    topCollisionShelf = false;
+                    bottomCollisionShelf = false;
+                }
+
             }
             else
             {
