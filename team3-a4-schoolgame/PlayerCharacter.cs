@@ -22,8 +22,24 @@ namespace MohawkGame2D
 
         public void Update()
         {
+
+            //functions below run constantly
             MovementMech();
             PlayerColour();
+
+            //updates player colour
+            if (isMoving == false)
+            {
+                playerColor = Color.Cyan;
+            }
+            else if (isMoving == true)
+            {
+                playerColor = Color.Yellow;
+            }
+
+            //draws player
+            Draw.FillColor = (playerColor);
+            Draw.Circle(playerPosX, playerPosY, 40);
         }
 
         //the function that allows the player to move horizontally and diagonally

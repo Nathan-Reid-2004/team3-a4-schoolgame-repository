@@ -38,6 +38,11 @@ namespace MohawkGame2D
 
         //collision booleans for each object
         public bool leftCollisionDeskLeft;
+        public bool rightCollisionDeskLeft;
+        public bool topCollisionDeskLeft;
+        public bool bottomCollisionDeskLeft;
+
+        public bool isCollidingDeskLeft;
 
 
         //setup and update functions
@@ -69,6 +74,9 @@ namespace MohawkGame2D
                 float rightEdgeDeskLeft = deskLeftPositionX + deskLeftWidth;
                 float topEdgeDeskLeft = deskLeftPositionY;
                 float bottomEdgeDeskLeft = deskLeftPositionY + deskLeftHeight;
+
+                
+                //making collision detection between the player character hitbox and desk hitboxes
 
 
             }
