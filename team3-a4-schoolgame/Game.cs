@@ -64,8 +64,9 @@ namespace MohawkGame2D
         {
             cleaner.Update();
             apple.Update();
-            paper.Update();
             mouse.Update();
+            paper.Update();
+
 
 
 

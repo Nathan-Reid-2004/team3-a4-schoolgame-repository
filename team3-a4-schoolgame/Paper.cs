@@ -28,7 +28,7 @@ namespace MohawkGame2D
 
         public void Setup()
         {
-            crumbledPaper = Graphics.LoadTexture("MohawkGame2D/crumpled_paper.png");
+            crumbledPaper = Graphics.LoadTexture("MohawkGame2D/Textures/crumpled_paper.png");
             inputPrompt = Graphics.LoadTexture("MohawkGame2D/Textures/input_e.png");
 
             // Paper position and size
