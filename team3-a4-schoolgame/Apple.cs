@@ -32,7 +32,7 @@ namespace MohawkGame2D
             inputPrompt = Graphics.LoadTexture("MohawkGame2D/Textures/input_e.png");
 
             // Apple position & size
-            position = new Vector2(400, 300);
+            position = new Vector2(550, 600);
             size = new Vector2(modlyApple.Width, modlyApple.Height);
 
         }

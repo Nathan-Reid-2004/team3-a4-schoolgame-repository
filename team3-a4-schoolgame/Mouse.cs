@@ -35,7 +35,7 @@ namespace MohawkGame2D
 
             // Mouse position and size
             size = new Vector2(blackMouse.Width, blackMouse.Height);
-            position = new Vector2(300, 100);
+            position = new Vector2(900, 415);
 
         }
 
