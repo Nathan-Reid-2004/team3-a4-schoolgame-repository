@@ -2,9 +2,12 @@
 using System;
 using System.Numerics;
 using System.Security.Principal;
+using MohawkGame2D;
 
 
 // The namespace your code is in.
+
+
 namespace MohawkGame2D
 {
     /// <summary>
@@ -20,11 +23,14 @@ namespace MohawkGame2D
         Paper paper;
 
 
+        
+       ///     Setup runs once before the game loop begins.
+  
 
 
 
-        /// <summary>
-        ///     Setup runs once before the game loop begins.
+
+
         /// </summary>
         public void Setup()
         {
@@ -38,6 +44,11 @@ namespace MohawkGame2D
             cleaner = new Cleaner();
             apple = new Apple();
             paper = new Paper();
+
+            mouse.Setup();
+            cleaner.Setup();
+            apple.Setup();
+            paper.Setup();
 
 
 
@@ -54,15 +65,21 @@ namespace MohawkGame2D
             cleaner.Update();
             apple.Update();
             paper.Update();
+            mouse.Update();
 
 
 
-            {
+
+
+
+
+
 
         }
-        }
-
     }
 
-
 }
+
+              
+
+
